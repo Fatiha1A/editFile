@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+## National Transfert Transactions
+## Documentation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Documentation](https://react.dev/learn)
 
-## Available Scripts
 
-In the project directory, you can run:
+## Description
+This project is the development of a distributed web application for managing national transfers. A national transfer is an operation by which a sender requests the availability of funds in another point of sale for a beneficiary or in BOA ATMs for himself.
 
-### `npm start`
+The management of national transfers handles the following functionalities:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Issuing a national transfer
+Serving a issued transfer
+Extortion of a national transfer (in case of point of sale error)
+Restitution of a national transfer (Customer request / beneficiary suspected or blacklisted)
+Blocking of a national transfer (Back Office or Automatic)
+Putting a national transfer into disuse (Automatic)
+Unlocking a national transfer
+Notification of the issuer and beneficiary of the national transfer
+The issuance of a national transfer can be initiated from the Agency and Wallet channels. However, the transfer issuance service specifies the channel used to serve the transfer amount.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The amount of the transfer to be served on BOA ATMs must be checked when issuing the transfer. This amount must be divided by 100 and must not exceed the ceiling of 2000.00 DH per transfer with an annual amount of 20,000.00 DH, also the beneficiary must be the sender.
 
-### `npm test`
+Technical requirements
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The application must be developed using a microservices architecture. The mobile part of the application must also be provided.
 
-### `npm run build`
+Tests, deployment, work with collaboration tools, dev-Ops and agile methods will be highly encouraged.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+It would also be better to mix several backend technologies (.NET, Java, Python, etc.) using different web services.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+A presentation and a report must be provided.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Project goals
 
-### `npm run eject`
+The goals of this project are to:
+Develop a distributed web application for managing national transfers.
+Use microservices architecture.
+Provide a mobile version of the application.
+Use agile methods and tools.
+Mix different backend technologies.
+Prepare a presentation and a report.
+Project scope
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The scope of this project includes the following:
+Development of the application's backend
+Development of the application's frontend
+Development of the application's mobile version
+Testing of the application
+Deployment of the application
