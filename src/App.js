@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React, { useState } from 'react';
+import TransferForm from './screens/TransferForm';
+import Modal from './screens/Modal';
+import './screens/style.css';
 
-function App() {
+const App = () => {
+  const [transferInfo, setTransferInfo] = useState(null);
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const handleFormSubmit = (data) => {
+    setTransferInfo(data);
+    toggleModal();
+  };
+
+  const toggleModal = () => {
+    setModalOpen(!isModalOpen);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Suivi de Transfert</h1>
+      <TransferForm onSubmit={handleFormSubmit} />
+      <Modal isOpen={isModalOpen} onClose={toggleModal} transferInfo={transferInfo} />
     </div>
   );
-}
+};
 
 export default App;
