@@ -1,29 +1,17 @@
 // App.js
-import React, { useState } from 'react';
-import TransferForm from './screens/TransferForm';
-import Modal from './screens/Modal';
-import './screens/style.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import TransferFunctions from './screens/TransferFunctions';
 
-const App = () => {
-  const [transferInfo, setTransferInfo] = useState(null);
-  const [isModalOpen, setModalOpen] = useState(false);
+function App() {
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<TransferFunctions />} />
 
-  const handleFormSubmit = (data) => {
-    setTransferInfo(data);
-    toggleModal();
-  };
-
-  const toggleModal = () => {
-    setModalOpen(!isModalOpen);
-  };
-
-  return (
-    <div>
-      <h1>Suivi de Transfert</h1>
-      <TransferForm onSubmit={handleFormSubmit} />
-      <Modal isOpen={isModalOpen} onClose={toggleModal} transferInfo={transferInfo} />
-    </div>
-  );
-};
+            </Routes>
+        </Router>
+    );
+}
 
 export default App;
